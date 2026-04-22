@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
+  <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  <meta property="og:description" content="{{ page.og_description | default: page.description }}">
+  {% if page.canonical %}<meta property="og:url" content="{{ page.canonical }}">{% endif %}
+  <meta property="og:site_name" content="York Computer">
+  {% if page.og_type == "article" %}<meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'yc-navy':  '#0F172A',
+            'yc-blue':  '#0B3D91',
+            'yc-bright':'#2563EB',
+            'yc-steel': '#4A5568',
+            'yc-white': '#F7FAFC',
+            'yc-black': '#1A202C',
+            'yc-green': '#059669',
+            'yc-orange':'#DD6B20',
+            'yc-gray':  '#CBD5E0',
+          },
+          fontFamily: {
+            sans:    ['"Open Sans"','Helvetica','sans-serif'],
+            heading: ['Montserrat','Arial','sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-yc-white text-yc-black">
+  {% include nav.html %}
+  {{ content }}
+  {% include footer.html %}
+  <elevenlabs-convai agent-id="agent_5201k1e3k8j1etpvy0tnctn2f1hy"></elevenlabs-convai>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
