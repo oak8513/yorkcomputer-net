@@ -14,7 +14,7 @@ from pathlib import Path
 
 SITE_DIR = Path(__file__).parent
 REMOTE = "origin"
-BRANCH = "main"
+BRANCH = "master"
 
 
 def git_push(commit_message: str = "SEO: auto-publish blog post") -> bool:
