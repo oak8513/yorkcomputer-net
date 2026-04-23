@@ -1,0 +1,40 @@
+---
+layout: default
+title: "IT Tips & Cybersecurity Advice | York Computer Blog"
+description: "Free IT and cybersecurity tips for small businesses and homeowners in York, PA. Plain-English advice from your local managed IT team."
+canonical: "https://yorkcomputer.net/blog/"
+og_title: "IT Tips & Cybersecurity Advice | York Computer Blog"
+og_description: "Plain-English IT and cybersecurity advice for small businesses and homeowners in York, PA."
+---
+
+<!-- PAGE HERO -->
+<section style="background: linear-gradient(135deg, #0F172A 0%, #0B3D91 100%);" class="text-white py-14 px-4 text-center">
+  <h1 class="font-heading font-bold text-4xl mb-3">IT Tips &amp; Cybersecurity Advice</h1>
+  <p class="text-blue-200 text-lg max-w-2xl mx-auto">Plain-English guides from your local managed IT team in York, PA. No jargon, no fluff — just the stuff you actually need to know.</p>
+</section>
+
+<!-- BLOG LISTING -->
+<div class="max-w-4xl mx-auto px-4 py-14">
+
+  {% for post in site.posts %}
+  <article class="bg-white border border-yc-gray rounded-xl p-7 hover:shadow-lg transition mb-6">
+    <div class="text-sm text-yc-steel mb-2">{{ post.date | date: "%B %-d, %Y" }}</div>
+    <h2 class="font-heading font-bold text-xl text-yc-navy mb-2">
+      <a href="{{ site.baseurl }}{{ post.url }}" class="hover:underline">{{ post.title }}</a>
+    </h2>
+    <p class="text-yc-steel text-sm leading-relaxed mb-4">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+    <a href="{{ site.baseurl }}{{ post.url }}" class="inline-block text-yc-bright font-heading font-semibold text-sm hover:underline">Read more &rarr;</a>
+  </article>
+  {% endfor %}
+
+</div>
+
+<!-- CTA -->
+<section class="bg-yc-orange py-12 px-4 text-white text-center">
+  <h2 class="font-heading font-bold text-2xl mb-2">Want Us to Handle Your IT?</h2>
+  <p class="mb-6 text-orange-100">Flat-rate managed IT starting at $49.99/month. Free 15-minute security review, no pressure.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="tel:7177399675" class="bg-white text-yc-orange font-heading font-bold py-3 px-8 rounded-lg hover:bg-orange-50 transition">Call 717-739-9675</a>
+    <a href="{{ site.baseurl }}/pricing.html" class="border-2 border-white text-white font-heading font-bold py-3 px-8 rounded-lg hover:bg-orange-700 transition">View Plans</a>
+  </div>
+</section>
