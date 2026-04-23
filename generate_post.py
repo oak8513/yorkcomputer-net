@@ -47,7 +47,7 @@ def _get_api_key() -> str:
     key = os.environ.get("ANTHROPIC_API_KEY", "")
     if key:
         return key
-    secrets = os.path.join(os.path.dirname(__file__), "..", ".secrets", "anthropic.txt")
+    secrets = os.path.join(os.path.dirname(__file__), "..", "..", ".secrets", "anthropic.txt")
     if os.path.exists(secrets):
         return open(secrets).read().strip()
     secrets_json = secrets.replace(".txt", ".json")
