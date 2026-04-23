@@ -1,5 +1,5 @@
 title: York Computer
 description: Managed IT services and cybersecurity for small businesses and homes in York, PA. Your Digital Bodyguard.
 url: "https://yorkcomputer.net"
-baseurl: ""
+baseurl: "/yorkcomputer-net"
 permalink: /blog/:title.html

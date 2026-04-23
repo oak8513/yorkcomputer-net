@@ -2,8 +2,8 @@
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-3">
-      <img src="/assets/logo.png" alt="York Computer logo" class="h-10 w-auto">
+    <a href="{{ site.baseurl }}/" class="flex items-center gap-3">
+      <img src="{{ site.baseurl }}/assets/logo.png" alt="York Computer logo" class="h-10 w-auto">
       <span class="font-heading font-bold text-lg leading-tight">
         York Computer<br><span class="text-xs font-normal text-blue-300 tracking-widest uppercase">Managed IT &amp; Security</span>
       </span>
@@ -11,20 +11,40 @@
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-6 text-sm font-heading font-semibold">
-      <a href="/" class="{% if page.url == '/' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Home</a>
-      <a href="/services.html" class="{% if page.url contains 'services' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Services</a>
-      <a href="/pricing.html" class="{% if page.url contains 'pricing' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Pricing</a>
-      <a href="/about.html" class="{% if page.url contains 'about' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">About</a>
-      <a href="/contact.html" class="{% if page.url contains 'contact' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Contact</a>
+      <a href="{{ site.baseurl }}/" class="{% if page.url == '/' or page.url == '/index.html' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Home</a>
+      <a href="{{ site.baseurl }}/services.html" class="{% if page.url contains 'services' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Services</a>
+      <a href="{{ site.baseurl }}/pricing.html" class="{% if page.url contains 'pricing' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Pricing</a>
+      <a href="{{ site.baseurl }}/about.html" class="{% if page.url contains 'about' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">About</a>
+      <a href="{{ site.baseurl }}/contact.html" class="{% if page.url contains 'contact' %}border-b-2 border-white pb-0.5{% else %}hover:text-yc-gray transition{% endif %}">Contact</a>
       <a href="https://yorkcomputerrepair.com" target="_blank" rel="noopener"
          class="bg-yc-orange text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-orange-700 transition whitespace-nowrap">
         &#128279; PC Repair Shop
       </a>
     </nav>
 
-    <!-- Mobile CTA -->
-    <a href="tel:7177399675" class="md:hidden bg-yc-orange text-white font-heading font-bold text-sm px-4 py-2 rounded-lg">
-      Call Us
-    </a>
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Open menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-yc-navy border-t border-blue-900 px-4 pb-4">
+    <nav class="flex flex-col gap-3 pt-3 text-sm font-heading font-semibold">
+      <a href="{{ site.baseurl }}/" class="hover:text-yc-gray transition">Home</a>
+      <a href="{{ site.baseurl }}/services.html" class="hover:text-yc-gray transition">Services</a>
+      <a href="{{ site.baseurl }}/pricing.html" class="hover:text-yc-gray transition">Pricing</a>
+      <a href="{{ site.baseurl }}/about.html" class="hover:text-yc-gray transition">About</a>
+      <a href="{{ site.baseurl }}/contact.html" class="hover:text-yc-gray transition">Contact</a>
+      <a href="tel:7177399675" class="bg-yc-orange text-white text-center font-bold py-2 px-4 rounded-lg mt-1">Call 717-739-9675</a>
+    </nav>
   </div>
 </header>
+
+<script>
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+</script>
