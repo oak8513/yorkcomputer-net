@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}">
+  <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
   <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
   <meta property="og:title" content="{{ page.og_title | default: page.title }}">
