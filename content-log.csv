@@ -4,3 +4,4 @@ date,keyword,cluster,slug,filename,url,status,error
 2026-04-23,managed service,Managed IT Services,,,,failed,ANTHROPIC_API_KEY not found. Set the env var or create C:\Users\Owner\Documents\Claude\.secrets\anthropic.txt
 2026-04-23,managed service,Managed IT Services,what-is-a-managed-service,2026-04-23-what-is-a-managed-service.html,https://yorkcomputer.net/blog/what-is-a-managed-service.html,published,
 2026-04-23,in home it support,Residential IT,in-home-it-support-york-pa,2026-04-23-in-home-it-support-york-pa.html,https://yorkcomputer.net/blog/in-home-it-support-york-pa.html,published,
+2026-04-24,msps near me,Managed IT Services,msps-near-me-york-pa,2026-04-24-msps-near-me-york-pa.html,https://yorkcomputer.net/blog/msps-near-me-york-pa.html,published,
