@@ -9,3 +9,17 @@ Thumbs.db
 *.env
 .env.local
 .env*.local
+
+# Content engine logs (not part of the published site)
+content-log.csv
+
+# Local automation scripts — keep on disk, do not publish to GitHub Pages repo
+content_engine.py
+generate_post.py
+publish_post.py
+LINKING_STRATEGY.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
