@@ -1,0 +1,33 @@
+#!/bin/sh
+# Auto-rebuild sitemap.xml whenever HTML files change.
+# If the rebuild changes sitemap.xml, stage it into the same commit.
+
+# Only run if the staged diff touches HTML in tracked directories.
+changed=$(git diff --cached --name-only --diff-filter=ACMRD | grep -E '^(index\.html|services\.html|pricing\.html|about\.html|contact\.html|privacy-policy\.html|terms-of-service\.html|blog/.*\.html)$')
+
+if [ -z "$changed" ]; then
+    exit 0
+fi
+
+# Pick the right Python (works on Git Bash for Windows where `python` is the launcher)
+if command -v python >/dev/null 2>&1; then
+    PYTHON=python
+elif command -v py >/dev/null 2>&1; then
+    PYTHON=py
+else
+    echo "[pre-commit] python not found; skipping sitemap rebuild." >&2
+    exit 0
+fi
+
+"$PYTHON" build_sitemap.py || {
+    echo "[pre-commit] build_sitemap.py failed — aborting commit." >&2
+    exit 1
+}
+
+# If the rebuild modified sitemap.xml, stage the update.
+if ! git diff --quiet -- sitemap.xml; then
+    git add sitemap.xml
+    echo "[pre-commit] sitemap.xml updated and staged."
+fi
+
+exit 0
