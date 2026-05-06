@@ -3,3 +3,9 @@ description: Managed IT services and cybersecurity for small businesses and home
 url: "https://yorkcomputer.net"
 baseurl: ""
 permalink: /blog/:title.html
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
